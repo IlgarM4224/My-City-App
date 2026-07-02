@@ -1,3 +1,121 @@
 <resources>
-    <string name="app_name">My City app</string>
+    <string name="app_name" translatable="false">Baku</string>
+
+    <string name="category_historical_landmarks">Historical Landmarks</string>
+
+    <string name="title1_HL">Old City (Icherisheher)</string>
+    <string name="subtitle1_HL">Downtown Baku</string>
+    <string name="short_description1_HL">The historic heart of Baku, surrounded by well-preserved 12th-century fortress walls.</string>
+    <string name="full_description1_HL">
+        Step back in time inside Baku\'s oldest residential quarter.
+        Known as Icherisheher, this maze of narrow alleys, ancient mosques, and caravanserais houses the famous Maiden Tower and the Palace of the Shirvanshahs.
+        It’s a living open-air museum and a UNESCO World Heritage site.
+    </string>
+
+    <string name="title2_HL">Heydar Aliyev Center</string>
+    <string name="subtitle2_HL">Narimanov District</string>
+    <string name="short_description2_HL">An architectural masterpiece designed by Zaha Hadid, famous for its flowing, curved lines.</string>
+    <string name="full_description2_HL">
+        This world-renowned cultural center challenges traditional architecture with its fluid, continuous shape that emerges from the landscape.
+        It hosts various exhibition spaces, a museum, and a concert hall, representing the modern, futuristic face of Baku.
+    </string>
+
+    <string name="title3_HL"> Flame Towers &amp; Highland Park</string>
+    <string name="subtitle3_HL">Parliamentary Avenue</string>
+    <string name="short_description3_HL">A trio of flame-shaped skyscrapers offering the best panoramic views of Baku.</string>
+    <string name="full_description3_HL">
+        Towering over the Baku bay, these three iconic skyscrapers symbolize the city\'s history of fire worship and its modern
+        energy wealth. Accessible by a funicular, the adjacent Highland Park (Dagustu Park) provides a breathtaking 360-degree
+        view of the entire city and the Caspian Sea, especially beautiful at night when the towers light up like real fire.
+    </string>
+
+    <string name="title4_HL">Ateshgah (Fire Temple)</string>
+    <string name="subtitle4_HL">Surakhany Suburb</string>
+    <string name="short_description4_HL">An ancient castle-like religious temple built over natural gas vents.</string>
+    <string name="full_description4_HL">
+        Located on the Absheron Peninsula, this pentagonal complex was used as a place of worship by Zoroastrian,
+        Hindu, and Sikh pilgrims over the centuries. The central altar sits on a natural pocket of natural gas that
+        used to burn eternally, creating a mystical and historical atmosphere outside the city center.
+    </string>
+
+
+
+    <string name="category_walks_and_recreation">Walks &amp; Recreation</string>
+
+    <string name="title1_WandR">Baku Boulevard</string>
+    <string name="subtitle1_WandR">Caspian Sea Coastline</string>
+    <string name="short_description1_WandR">A century-old promenade stretching along the Caspian Sea, perfect for long walks.</string>
+    <string name="full_description1_WandR">
+        Established in 1909, this massive seaside park runs parallel to Baku\'s seafront. It features lush green lanes,
+        open-air cafés, bike rentals, and historical amusement rides.It is the social heart of the city where locals and
+        tourists gather to catch the refreshing sea breeze.
+    </string>
+
+    <string name="title2_WandR">Nizami Street (Torgovaya)</string>
+    <string name="subtitle2_WandR">Downtown Baku</string>
+    <string name="short_description2_WandR">A vibrant, fully pedestrianized street famous for its stunning architecture and shopping.</string>
+    <string name="full_description2_WandR">
+        Commonly known as Torgovaya, this central pedestrian avenue is lined with elegant late-19th-century buildings featuring European
+        architectural styles. The street comes alive in the evening with brilliant overhead lighting installations, street musicians,
+        local boutiques, and dozens of cozy restaurants.
+    </string>
+
+    <string name="title3_WandR">Little Venice</string>
+    <string name="subtitle3_WandR">Baku Boulevard</string>
+    <string name="short_description3_WandR">A picturesque system of clean water canals and stone bridges inside the Boulevard.</string>
+    <string name="full_description3_WandR">
+        Built in the 1960s, this charming park recreates a mini Venetian experience right by the Caspian Sea.
+        Visitors can ride authentic gondolas through shallow, bright-blue water channels, passing by small green islands,
+        marble bridges, and outdoor restaurants.
+    </string>
+
+    <string name="title4_WandR">Dede Gorgud Park</string>
+    <string name="subtitle4_WandR">Narimanov District</string>
+    <string name="short_description4_WandR">A modern, peaceful park featuring a large artificial lake and green lawns.</string>
+    <string name="full_description4_WandR">
+        This is one of the newer and largest recreational parks in the city center. It offers a calm escape from the urban rush,
+        featuring a beautiful central lake where you can rent paddle boats, well-maintained wooden pathways, and plenty of space
+        for picnics under shady trees.
+    </string>
+
+
+
+    <string name="category_food">Taste of Baku</string>
+
+    <string name="title1_F">Traditional Tea Houses (Chaykhana)</string>
+    <string name="subtitle1_F">Old City (Icherisheher)</string>
+    <string name="short_description1_F">Authentic spaces to experience the famous Azerbaijani tea culture.</string>
+    <string name="full_description1_F">
+        In Baku, tea is more than a drink—it\'s a ritual. Tucked away in the stone alleys of the Old City, these
+        traditional teahouses serve hot black tea in classic armudu (pear-shaped) glasses. It is always
+        accompanied by a colorful variety of local jams (like white cherry, walnut, or fig), spiced sweets, and lemon.
+    </string>
+
+    <string name="title2_F">National Cuisine Restaurants</string>
+    <string name="subtitle2_F">All around the City</string>
+    <string name="short_description2_F">Authentic dining spaces serving rich, centuries-old Azerbaijani dishes.</string>
+    <string name="full_description2_F">
+        To truly experience Baku, one must dive into its culinary heritage. Scattered across the city—from atmospheric
+        stone cellars in the Old City to elegant modern venues downtown—these restaurants serve iconic national dishes.
+        Here, you can try Shah Plov (royal rice baked in a crispy pastry), tender clay-oven kebabs, and handmade dolma,
+        all while surrounded by traditional carpets and live folk music.
+    </string>
+
+    <string name="title3_F">Art &amp; Gastro Spaces</string>
+    <string name="subtitle3_F">Bayil District / Port Baku</string>
+    <string name="short_description3_F">Trendy seaside hubs blending modern art exhibitions with innovative gastro-cafes.</string>
+    <string name="full_description3_F">
+        Located in beautifully renovated industrial buildings near the sea, these spaces represent Baku\'s modern creative wave.
+        Visitors can explore cutting-edge contemporary art galleries and then relax in concept cafés that serve everything
+        from fusion Azerbaijani street food to trendy international dishes, all within a vibrant, artistic atmosphere.
+    </string>
+
+    <string name="title4_F">Specialty Coffee Shops</string>
+    <string name="subtitle4_F">Downtown Baku</string>
+    <string name="short_description4_F">The modern face of Baku\'s coffee scene, featuring trendy local roasters.</string>
+    <string name="full_description4_F">
+        Alongside ancient teahouses, Baku has a booming modern coffee culture. Trendy local spots like Coffee Moffie
+        or United Coffee Bros offer high-quality specialty coffee, cozy spaces to work or study, and a vibrant community
+        atmosphere for the city\'s youth.
+    </string>
 </resources>

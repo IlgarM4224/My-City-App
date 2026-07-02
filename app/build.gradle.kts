@@ -6,7 +6,7 @@ plugins {
 android {
     namespace = "com.example.mycityapp"
     compileSdk {
-        version = release(36) {
+        version = release(37) {
             minorApiLevel = 1
         }
     }
@@ -14,6 +14,7 @@ android {
     defaultConfig {
         applicationId = "com.example.mycityapp"
         minSdk = 24
+        //noinspection OldTargetApi
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
@@ -48,8 +49,11 @@ dependencies {
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation("androidx.compose.material3:material3-window-size-class")
-    implementation("androidx.compose.ui:ui-text-google-fonts:1.7.6")
+    implementation(libs.androidx.compose.material3.window.size.class1)
+    implementation(libs.androidx.compose.ui.text.google.fonts)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.compose.material.icons.extended)
 
     testImplementation(libs.junit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
