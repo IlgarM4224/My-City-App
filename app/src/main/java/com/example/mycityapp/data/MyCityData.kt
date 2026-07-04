@@ -104,4 +104,11 @@ object MyCityData {
             imageId = R.drawable.foto4_f
         ),
     )
+
+    val testPlaces = listOf(
+        getPlaces()[0],
+        getPlaces()[1],
+        getPlaces()[2],
+        getPlaces()[3],
+    )
 }
