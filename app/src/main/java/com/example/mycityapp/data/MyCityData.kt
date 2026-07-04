@@ -5,8 +5,6 @@ import com.example.mycityapp.model.Category
 import com.example.mycityapp.model.Place
 
 object MyCityData {
-    val defaultPlaces = getPlaces()[0]
-
     fun getCategories() = listOf(
         Category(
             titleId = R.string.category_Attractions,
