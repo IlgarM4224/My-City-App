@@ -1,4 +1,4 @@
-package com.example.mycityapp.ui.components
+package com.example.mycityapp.ui.screens
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
@@ -20,20 +20,20 @@ import androidx.compose.ui.unit.dp
 import com.example.mycityapp.model.Place
 
 @Composable
-fun CategoryList(
-    categoryList: List<Place>,
-    onCategoryClick: (Place) -> Unit,
+fun PlacesList(
+    placesList: List<Place>,
+    onPlaceClick: (Place) -> Unit,
     modifier: Modifier = Modifier
 ){
     LazyColumn(modifier = modifier){
-        items(categoryList.size){
+        items(placesList.size){
             PlaceCard(
                 onClick = {
-                    onCategoryClick(categoryList[it])
+                    onPlaceClick(placesList[it])
                 },
-                title = stringResource(id = categoryList[it].titleId),
-                shortDescription = stringResource(id = categoryList[it].shortDescriptionId),
-                imageId = categoryList[it].imageId,
+                title = stringResource(id = placesList[it].titleId),
+                shortDescription = stringResource(id = placesList[it].shortDescriptionId),
+                imageId = placesList[it].imageId,
                 modifier = Modifier.padding(8.dp)
             )
         }

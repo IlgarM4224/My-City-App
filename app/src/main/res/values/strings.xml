@@ -1,38 +1,39 @@
 <resources>
     <string name="app_name" translatable="false">Baku</string>
 
-    <string name="category_historical_landmarks">Historical Landmarks</string>
+    <string name="category_Attractions">Attractions</string>
+    <string name="short_description_A">Baku contains ancient history and modern architecture</string>
 
-    <string name="title1_HL">Old City (Icherisheher)</string>
-    <string name="subtitle1_HL">Downtown Baku</string>
-    <string name="short_description1_HL">The historic heart of Baku, surrounded by well-preserved 12th-century fortress walls.</string>
-    <string name="full_description1_HL">
+    <string name="title1_A">Old City (Icherisheher)</string>
+    <string name="subtitle1_A">Downtown Baku</string>
+    <string name="short_description1_A">The historic heart of Baku, surrounded by well-preserved 12th-century fortress walls.</string>
+    <string name="full_description1_A">
         Step back in time inside Baku\'s oldest residential quarter.
         Known as Icherisheher, this maze of narrow alleys, ancient mosques, and caravanserais houses the famous Maiden Tower and the Palace of the Shirvanshahs.
         It’s a living open-air museum and a UNESCO World Heritage site.
     </string>
 
-    <string name="title2_HL">Heydar Aliyev Center</string>
-    <string name="subtitle2_HL">Narimanov District</string>
-    <string name="short_description2_HL">An architectural masterpiece designed by Zaha Hadid, famous for its flowing, curved lines.</string>
-    <string name="full_description2_HL">
+    <string name="title2_A">Heydar Aliyev Center</string>
+    <string name="subtitle2_A">Narimanov District</string>
+    <string name="short_description2_A">An architectural masterpiece designed by Zaha Hadid, famous for its flowing, curved lines.</string>
+    <string name="full_description2_A">
         This world-renowned cultural center challenges traditional architecture with its fluid, continuous shape that emerges from the landscape.
         It hosts various exhibition spaces, a museum, and a concert hall, representing the modern, futuristic face of Baku.
     </string>
 
-    <string name="title3_HL"> Flame Towers &amp; Highland Park</string>
-    <string name="subtitle3_HL">Parliamentary Avenue</string>
-    <string name="short_description3_HL">A trio of flame-shaped skyscrapers offering the best panoramic views of Baku.</string>
-    <string name="full_description3_HL">
+    <string name="title3_A"> Flame Towers &amp; Highland Park</string>
+    <string name="subtitle3_A">Parliamentary Avenue</string>
+    <string name="short_description3_A">A trio of flame-shaped skyscrapers offering the best panoramic views of Baku.</string>
+    <string name="full_description3_A">
         Towering over the Baku bay, these three iconic skyscrapers symbolize the city\'s history of fire worship and its modern
         energy wealth. Accessible by a funicular, the adjacent Highland Park (Dagustu Park) provides a breathtaking 360-degree
         view of the entire city and the Caspian Sea, especially beautiful at night when the towers light up like real fire.
     </string>
 
-    <string name="title4_HL">Ateshgah (Fire Temple)</string>
-    <string name="subtitle4_HL">Surakhany Suburb</string>
-    <string name="short_description4_HL">An ancient castle-like religious temple built over natural gas vents.</string>
-    <string name="full_description4_HL">
+    <string name="title4_A">Ateshgah (Fire Temple)</string>
+    <string name="subtitle4_A">Surakhany Suburb</string>
+    <string name="short_description4_A">An ancient castle-like religious temple built over natural gas vents.</string>
+    <string name="full_description4_A">
         Located on the Absheron Peninsula, this pentagonal complex was used as a place of worship by Zoroastrian,
         Hindu, and Sikh pilgrims over the centuries. The central altar sits on a natural pocket of natural gas that
         used to burn eternally, creating a mystical and historical atmosphere outside the city center.
@@ -41,6 +42,7 @@
 
 
     <string name="category_walks_and_recreation">Walks &amp; Recreation</string>
+    <string name="short_description_WandR">Baku is a beautiful city on the shores of the Caspian Sea, where ancient oriental streets stand side by side with huge modern high-rises.</string>
 
     <string name="title1_WandR">Baku Boulevard</string>
     <string name="subtitle1_WandR">Caspian Sea Coastline</string>
@@ -81,6 +83,7 @@
 
 
     <string name="category_food">Taste of Baku</string>
+    <string name="short_description_f">Baku\'s gastronomy is hearty, meaty, and very aromatic Eastern cuisine with an abundance of herbs and spices.</string>
 
     <string name="title1_F">Traditional Tea Houses (Chaykhana)</string>
     <string name="subtitle1_F">Old City (Icherisheher)</string>
@@ -103,7 +106,7 @@
 
     <string name="title3_F">Art &amp; Gastro Spaces</string>
     <string name="subtitle3_F">Bayil District / Port Baku</string>
-    <string name="short_description3_F">Trendy seaside hubs blending modern art exhibitions with innovative gastro-cafes.</string>
+    <string name="short_description3_F">Trendy seaside hubs blending modern art exhibitions with innovative gastro-cafés.</string>
     <string name="full_description3_F">
         Located in beautifully renovated industrial buildings near the sea, these spaces represent Baku\'s modern creative wave.
         Visitors can explore cutting-edge contemporary art galleries and then relax in concept cafés that serve everything
@@ -118,4 +121,9 @@
         or United Coffee Bros offer high-quality specialty coffee, cozy spaces to work or study, and a vibrant community
         atmosphere for the city\'s youth.
     </string>
+
+    <string name="default_title">Default Title</string>
+    <string name="default_subtitle">Default Subtitle</string>
+    <string name="default_full_description">Default Full Description</string>
+    <string name="default_category_title">Select a category</string>
 </resources>

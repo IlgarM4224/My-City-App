@@ -18,3 +18,9 @@ data class Category (
     @field:DrawableRes val imageId: Int,
     val places: List<Place>
 )
+
+enum class CityScreen {
+    Categories,
+    Places,
+    Details
+}

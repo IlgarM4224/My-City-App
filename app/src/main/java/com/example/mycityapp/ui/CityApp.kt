@@ -1,13 +1,11 @@
 package com.example.mycityapp.ui
 
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.statusBarsPadding
+import com.example.mycityapp.R
 import androidx.compose.material3.Surface
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.mycityapp.ui.screens.CityAppContent
@@ -31,19 +29,26 @@ fun CityApp(
     Surface{
         CityAppContent(
             contentType = contentType,
-            categoryTitle = stringResource(id = uiState.currentPlace.categoryTitleId),
-            title = stringResource(id = uiState.currentPlace.titleId),
-            subtitle = stringResource(uiState.currentPlace.subtitleId),
-            fullDescription = stringResource(uiState.currentPlace.fullDescriptionId),
-            imageId = uiState.currentPlace.imageId,
-            isShowingListPage = uiState.isShowingListPage,
-            categoryList = uiState.places,
-            modifier = Modifier.statusBarsPadding().fillMaxSize(),
-            onPlaceClick = { selectedPlace ->
-                viewModel.cardClick(selectedPlace)
+            categoryTitle = stringResource(id = uiState.currentCategory?.titleId ?: R.string.default_category_title),
+            title = stringResource(id = uiState.currentPlace?.titleId ?: R.string.default_title),
+            subtitle = stringResource(id = uiState.currentPlace?.subtitleId ?: R.string.default_subtitle),
+            fullDescription = stringResource(id = uiState.currentPlace?.fullDescriptionId ?: R.string.default_full_description),
+            imageId = uiState.currentPlace?.imageId ?: R.drawable.foto1_a,
+            isShowingCategoryPage = uiState.isShowingCategoryList,
+            categoryList = uiState.categories,
+            placeList = uiState.currentCategory?.places ?: emptyList(),
+            cityScreen = uiState.currentScreen,
+            selectCategory = {
+                viewModel.selectCategory(it)
             },
-            navigateBack = {
-                viewModel.navigateToListPage()
+            selectPlace = {
+                viewModel.selectPlace(it)
+            },
+            navigateToPlaceList = {
+                viewModel.navigateToPlaceList()
+            },
+            navigateToCategoryList = {
+                viewModel.navigateToCategoryList()
             }
         )
     }
