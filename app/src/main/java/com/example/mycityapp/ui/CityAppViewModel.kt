@@ -24,8 +24,6 @@ class CityAppViewModel: ViewModel() {
             currentCategory.copy(
                 currentCategory = selectedCategory,
                 currentScreen = CityScreen.Places,
-                isShowingListPage = true,
-                isShowingCategoryList = false
             )
         }
     }
@@ -34,34 +32,32 @@ class CityAppViewModel: ViewModel() {
         _uiState.update { currentState ->
             currentState.copy(
                 currentPlace = selectedPlace,
-                isShowingListPage = false,
                 currentScreen = CityScreen.Details
             )
         }
     }
 
-    fun navigateToPlaceList(){
-        _uiState.update {
-            it.copy(
-                isShowingListPage = true,
-                currentScreen = CityScreen.Places,
-                currentPlace = null
-            )
+    fun onBackPressed(){
+        when (uiState.value.currentScreen){
+            CityScreen.Details -> {
+                _uiState.update { currentState ->
+                    currentState.copy(
+                        currentScreen = CityScreen.Places,
+                        currentPlace = null
+                    )
+                }
+            }
+            CityScreen.Places -> {
+                _uiState.update { currentState ->
+                    currentState.copy(
+                        currentScreen = CityScreen.Categories,
+                        currentCategory = null
+                    )
+                }
+            }
+            else -> { }
         }
     }
-
-    fun navigateToCategoryList(){
-        _uiState.update {
-            it.copy(
-                isShowingListPage = false,
-                isShowingCategoryList = true,
-                currentScreen = CityScreen.Categories,
-                currentCategory = null,
-                currentPlace = null
-            )
-        }
-    }
-
 }
 
 data class CityAppUiState(
@@ -69,7 +65,5 @@ data class CityAppUiState(
     val currentCategory: Category? = null,
     val currentPlace: Place? = null,
     val currentScreen: CityScreen = CityScreen.Categories,
-    val isShowingCategoryList: Boolean = true,
-    val isShowingListPage: Boolean = false
 )
 

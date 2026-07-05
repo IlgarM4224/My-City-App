@@ -1,13 +1,17 @@
 package com.example.mycityapp.ui
 
-import com.example.mycityapp.R
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.compose.rememberNavController
+import com.example.mycityapp.R
+import com.example.mycityapp.model.CityScreen
 import com.example.mycityapp.ui.screens.CityAppContent
 import com.example.mycityapp.utils.CityContentType
 
@@ -17,6 +21,8 @@ fun CityApp(
 ){
     val viewModel: CityAppViewModel = viewModel()
     val uiState by viewModel.uiState.collectAsState()
+
+    val navController = rememberNavController()
 
     val contentType = when (windowSize) {
         WindowWidthSizeClass.Compact,
@@ -34,22 +40,17 @@ fun CityApp(
             subtitle = stringResource(id = uiState.currentPlace?.subtitleId ?: R.string.default_subtitle),
             fullDescription = stringResource(id = uiState.currentPlace?.fullDescriptionId ?: R.string.default_full_description),
             imageId = uiState.currentPlace?.imageId ?: R.drawable.foto1_a,
-            isShowingCategoryPage = uiState.isShowingCategoryList,
+            canNavigateBack = uiState.currentScreen != CityScreen.Categories,
             categoryList = uiState.categories,
             placeList = uiState.currentCategory?.places ?: emptyList(),
-            cityScreen = uiState.currentScreen,
-            selectCategory = {
-                viewModel.selectCategory(it)
+            selectCategory = { viewModel.selectCategory(it) },
+            selectPlace = { viewModel.selectPlace(it) },
+            navigateBack = {
+                navController.navigateUp()
+                viewModel.onBackPressed()
             },
-            selectPlace = {
-                viewModel.selectPlace(it)
-            },
-            navigateToPlaceList = {
-                viewModel.navigateToPlaceList()
-            },
-            navigateToCategoryList = {
-                viewModel.navigateToCategoryList()
-            }
+            navController = navController,
+            modifier = Modifier.fillMaxSize()
         )
     }
 }

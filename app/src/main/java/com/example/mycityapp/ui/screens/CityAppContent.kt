@@ -7,13 +7,21 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.example.mycityapp.data.MyCityData
 import com.example.mycityapp.model.Category
 import com.example.mycityapp.model.CityScreen
 import com.example.mycityapp.model.Place
 import com.example.mycityapp.ui.components.CityAppBar
 import com.example.mycityapp.utils.CityContentType
+import androidx.activity.compose.BackHandler
+import androidx.compose.animation.AnimatedContentTransitionScope
+import androidx.compose.animation.core.tween
+import androidx.compose.ui.res.dimensionResource
+import com.example.mycityapp.R
 
 @Composable
 fun CityAppContent(
@@ -24,57 +32,95 @@ fun CityAppContent(
     subtitle: String = "",
     fullDescription: String = "",
     @DrawableRes imageId: Int = 0,
-    isShowingCategoryPage: Boolean = true,
+    canNavigateBack: Boolean = true,
     categoryList: List<Category>,
     placeList: List<Place>,
-    cityScreen: CityScreen,
     selectCategory: (Category) -> Unit = {},
     selectPlace: (Place) -> Unit = {},
-    navigateToCategoryList: () -> Unit = {},
-    navigateToPlaceList: () -> Unit = {},
+    navigateBack: () -> Unit = {},
+    navController: NavHostController = rememberNavController()
 ){
+    val smallPadding = dimensionResource(id = R.dimen.padding_small)
+
     Scaffold(
         topBar = {
             CityAppBar(
                 categoryTitle = categoryTitle,
-                navigateUp = {
-                    if (cityScreen == CityScreen.Places) navigateToCategoryList()
-                    else navigateToPlaceList()
-                },
-                isShowingListPage = isShowingCategoryPage,
-                modifier = Modifier.statusBarsPadding().padding(8.dp)
+                navigateUp = navigateBack,
+                canNavBack = canNavigateBack,
+                modifier = Modifier.statusBarsPadding(),
             )
         },
         modifier = modifier
     ){ innerPadding ->
-        if (contentType == CityContentType.ListOnly){
-            when (cityScreen){
-                CityScreen.Categories -> CategoryList(
+
+        NavHost(
+            navController = navController,
+            startDestination = CityScreen.Categories.name,
+            modifier = Modifier.padding(innerPadding)
+        ){
+            composable (route = CityScreen.Categories.name) {
+                CategoryList(
                     categoryList = categoryList,
                     onCategoryClick = {
                         selectCategory(it)
+                        navController.navigate(CityScreen.Places.name)
                     },
-                    modifier = Modifier
-                        .padding(innerPadding)
-                        .padding(8.dp)
+                    modifier = Modifier.padding(smallPadding)
                 )
-                CityScreen.Places -> PlacesList(
+            }
+
+            composable (
+                route = CityScreen.Places.name,
+                enterTransition = {
+                    slideIntoContainer(
+                        AnimatedContentTransitionScope.SlideDirection.Left,
+                        animationSpec = tween(350)
+                    )
+                },
+                // Когда возвращаемся на категории, экран мест уезжает направо
+                popExitTransition = {
+                    slideOutOfContainer(
+                        AnimatedContentTransitionScope.SlideDirection.Right,
+                        animationSpec = tween(350)
+                    )
+                }
+            ) {
+                BackHandler { navigateBack() }
+
+                PlacesList(
                     placesList = placeList,
                     onPlaceClick = {
                         selectPlace(it)
+                        navController.navigate(CityScreen.Details.name)
                     },
-                    modifier = Modifier
-                        .padding(innerPadding)
-                        .padding(8.dp)
+                    modifier = Modifier.padding(smallPadding)
                 )
-                CityScreen.Details -> Description(
+            }
+
+            composable (
+                route = CityScreen.Details.name,
+                enterTransition = {
+                    slideIntoContainer(
+                        AnimatedContentTransitionScope.SlideDirection.Left,
+                        animationSpec = tween(350)
+                    )
+                },
+                popExitTransition = {
+                    slideOutOfContainer(
+                        AnimatedContentTransitionScope.SlideDirection.Right,
+                        animationSpec = tween(350)
+                    )
+                }
+            ) {
+                BackHandler { navigateBack() }
+
+                Description(
                     title = title,
                     subtitle = subtitle,
                     fullDescription = fullDescription,
                     imageId = imageId,
-                    modifier = Modifier
-                        .padding(innerPadding)
-                        .padding(8.dp)
+                    modifier = Modifier.padding(smallPadding)
                 )
             }
         }
@@ -88,9 +134,9 @@ fun CityAppListOnlyPreview(){
     val viewData = MyCityData
     CityAppContent(
         placeList = viewData.testPlaces,
-        isShowingCategoryPage = true,
+        canNavigateBack = true,
         categoryList = viewData.testCategories,
         contentType = CityContentType.ListOnly,
-        cityScreen = CityScreen.Categories
+        categoryTitle = "Select a category",
     )
 }

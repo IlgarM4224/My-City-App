@@ -16,8 +16,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.unit.dp
+import com.example.mycityapp.R
 
 @Composable
 fun Description (
@@ -27,6 +28,7 @@ fun Description (
     @DrawableRes imageId: Int,
     modifier: Modifier = Modifier
 ){
+    val (width,height) = Pair(dimensionResource(R.dimen.image_width), dimensionResource(R.dimen.image_height))
     Column(
         modifier = modifier
     ) {
@@ -38,7 +40,7 @@ fun Description (
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
-                    .size(width = 400.dp, height = 250.dp)
+                    .size(width = width, height = height)
             )
         }
         Text(
@@ -56,7 +58,7 @@ fun Description (
             )
         }
 
-        Spacer(Modifier.padding(8.dp))
+        Spacer(Modifier.padding(dimensionResource(R.dimen.padding_small)))
 
         Text(
             text = fullDescription,

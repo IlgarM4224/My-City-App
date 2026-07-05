@@ -14,9 +14,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
+import com.example.mycityapp.R
 import com.example.mycityapp.model.Place
 
 @Composable
@@ -34,7 +35,7 @@ fun PlacesList(
                 title = stringResource(id = placesList[it].titleId),
                 shortDescription = stringResource(id = placesList[it].shortDescriptionId),
                 imageId = placesList[it].imageId,
-                modifier = Modifier.padding(8.dp)
+                modifier = Modifier.padding(dimensionResource(R.dimen.padding_small))
             )
         }
     }
@@ -48,6 +49,9 @@ fun PlaceCard(
     modifier: Modifier = Modifier,
     onClick: () -> Unit = {},
 ){
+    val spacer = dimensionResource(R.dimen.place_spacer)
+    val imageSize = dimensionResource(R.dimen.place_image_size)
+
     Card(
         onClick = onClick,
         modifier = modifier
@@ -58,10 +62,10 @@ fun PlaceCard(
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
-                    .size(128.dp)
+                    .size(imageSize)
             )
 
-            Spacer(Modifier.padding(4.dp))
+            Spacer(Modifier.padding(spacer))
 
             Column{
                 Text(
@@ -69,7 +73,7 @@ fun PlaceCard(
                     style = MaterialTheme.typography.titleLarge
                 )
 
-                Spacer(Modifier.padding(4.dp))
+                Spacer(Modifier.padding(spacer))
 
                 Text(
                     text = shortDescription,
