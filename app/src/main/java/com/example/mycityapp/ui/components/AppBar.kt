@@ -40,7 +40,7 @@ fun CityAppBar(
         Text(
             text = categoryTitle,
             style = MaterialTheme.typography.titleLarge,
-            modifier = Modifier.padding(8.dp)
+            modifier = Modifier.padding(16.dp)
         )
     }
 }

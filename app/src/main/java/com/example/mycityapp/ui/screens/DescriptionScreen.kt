@@ -6,8 +6,8 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material3.Icon
@@ -28,19 +28,15 @@ fun Description (
     @DrawableRes imageId: Int,
     modifier: Modifier = Modifier
 ){
-    val (width,height) = Pair(dimensionResource(R.dimen.image_width), dimensionResource(R.dimen.image_height))
     Column(
         modifier = modifier
     ) {
-        Box(
-            modifier = Modifier.weight(1f)
-        ){
+        Box {
             Image(
                 painter = painterResource(id = imageId),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .size(width = width, height = height)
+                modifier = Modifier.fillMaxWidth()
             )
         }
         Text(
@@ -63,7 +59,6 @@ fun Description (
         Text(
             text = fullDescription,
             style = MaterialTheme.typography.bodyLarge,
-            modifier = Modifier.weight(2f)
         )
     }
 }

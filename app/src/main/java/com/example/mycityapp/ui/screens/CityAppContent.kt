@@ -20,6 +20,7 @@ import com.example.mycityapp.utils.CityContentType
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedContentTransitionScope
 import androidx.compose.animation.core.tween
+import androidx.compose.foundation.layout.Row
 import androidx.compose.ui.res.dimensionResource
 import com.example.mycityapp.R
 
@@ -54,74 +55,147 @@ fun CityAppContent(
         modifier = modifier
     ){ innerPadding ->
 
-        NavHost(
-            navController = navController,
-            startDestination = CityScreen.Categories.name,
-            modifier = Modifier.padding(innerPadding)
-        ){
-            composable (route = CityScreen.Categories.name) {
-                CategoryList(
-                    categoryList = categoryList,
-                    onCategoryClick = {
-                        selectCategory(it)
-                        navController.navigate(CityScreen.Places.name)
-                    },
-                    modifier = Modifier.padding(smallPadding)
-                )
-            }
-
-            composable (
-                route = CityScreen.Places.name,
-                enterTransition = {
-                    slideIntoContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Left,
-                        animationSpec = tween(350)
-                    )
-                },
-                // Когда возвращаемся на категории, экран мест уезжает направо
-                popExitTransition = {
-                    slideOutOfContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Right,
-                        animationSpec = tween(350)
+        if (contentType != CityContentType.ListAndDetail) {
+            NavHost(
+                navController = navController,
+                startDestination = CityScreen.Categories.name,
+                modifier = Modifier.padding(innerPadding)
+            ){
+                composable (route = CityScreen.Categories.name) {
+                    CategoryList(
+                        categoryList = categoryList,
+                        onCategoryClick = {
+                            selectCategory(it)
+                            navController.navigate(CityScreen.Places.name)
+                        },
+                        modifier = Modifier.padding(smallPadding)
                     )
                 }
-            ) {
-                BackHandler { navigateBack() }
 
-                PlacesList(
-                    placesList = placeList,
-                    onPlaceClick = {
-                        selectPlace(it)
-                        navController.navigate(CityScreen.Details.name)
+                composable (
+                    route = CityScreen.Places.name,
+                    enterTransition = {
+                        slideIntoContainer(
+                            AnimatedContentTransitionScope.SlideDirection.Left,
+                            animationSpec = tween(350)
+                        )
                     },
-                    modifier = Modifier.padding(smallPadding)
-                )
-            }
+                    popExitTransition = {
+                        slideOutOfContainer(
+                            AnimatedContentTransitionScope.SlideDirection.Right,
+                            animationSpec = tween(350)
+                        )
+                    }
+                ) {
+                    BackHandler { navigateBack() }
 
-            composable (
-                route = CityScreen.Details.name,
-                enterTransition = {
-                    slideIntoContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Left,
-                        animationSpec = tween(350)
-                    )
-                },
-                popExitTransition = {
-                    slideOutOfContainer(
-                        AnimatedContentTransitionScope.SlideDirection.Right,
-                        animationSpec = tween(350)
+                    PlacesList(
+                        placesList = placeList,
+                        onPlaceClick = {
+                            selectPlace(it)
+                            navController.navigate(CityScreen.Details.name)
+                        },
+                        modifier = Modifier.padding(smallPadding)
                     )
                 }
-            ) {
-                BackHandler { navigateBack() }
 
-                Description(
-                    title = title,
-                    subtitle = subtitle,
-                    fullDescription = fullDescription,
-                    imageId = imageId,
-                    modifier = Modifier.padding(smallPadding)
-                )
+                composable (
+                    route = CityScreen.Details.name,
+                    enterTransition = {
+                        slideIntoContainer(
+                            AnimatedContentTransitionScope.SlideDirection.Left,
+                            animationSpec = tween(350)
+                        )
+                    },
+                    popExitTransition = {
+                        slideOutOfContainer(
+                            AnimatedContentTransitionScope.SlideDirection.Right,
+                            animationSpec = tween(350)
+                        )
+                    }
+                ) {
+                    BackHandler { navigateBack() }
+
+                    Description(
+                        title = title,
+                        subtitle = subtitle,
+                        fullDescription = fullDescription,
+                        imageId = imageId,
+                        modifier = Modifier.padding(smallPadding)
+                    )
+                }
+            }
+        }
+        else {
+            NavHost(
+                navController = navController,
+                startDestination = CityScreen.Categories.name,
+                modifier = Modifier.padding(innerPadding)
+            ){
+                composable (route = CityScreen.Categories.name) {
+                    CategoryList(
+                        categoryList = categoryList,
+                        onCategoryClick = {
+                            selectCategory(it)
+                            navController.navigate(CityScreen.Places.name)
+                        },
+                        modifier = Modifier.padding(smallPadding)
+                    )
+                }
+
+                composable (route = CityScreen.Places.name) {
+                    BackHandler { navigateBack() }
+
+                    Row{
+                        CategoryList(
+                            categoryList = categoryList,
+                            onCategoryClick = {
+                                selectCategory(it)
+                                navController.navigate(CityScreen.Places.name)
+                            },
+                            modifier = Modifier
+                                .weight(1f)
+                                .padding(smallPadding)
+                        )
+
+                        PlacesList(
+                            placesList = placeList,
+                            onPlaceClick = {
+                                selectPlace(it)
+                                navController.navigate(CityScreen.Details.name)
+                            },
+                            modifier = Modifier
+                                .weight(1f)
+                                .padding(smallPadding)
+                        )
+                    }
+                }
+
+                composable (route = CityScreen.Details.name) {
+                    BackHandler { navigateBack() }
+                    Row {
+                        PlacesList(
+                            placesList = placeList,
+                            onPlaceClick = {
+                                selectPlace(it)
+                                navController.navigate(CityScreen.Details.name)
+                            },
+                            modifier = Modifier
+                                .weight(1f)
+                                .padding(smallPadding)
+                        )
+
+                        Description(
+                            title = title,
+                            subtitle = subtitle,
+                            fullDescription = fullDescription,
+                            imageId = imageId,
+                            modifier = Modifier
+                                .weight(1f)
+                                .padding(smallPadding)
+                        )
+                    }
+                }
             }
         }
     }
@@ -134,7 +208,7 @@ fun CityAppListOnlyPreview(){
     val viewData = MyCityData
     CityAppContent(
         placeList = viewData.testPlaces,
-        canNavigateBack = true,
+        canNavigateBack = false,
         categoryList = viewData.testCategories,
         contentType = CityContentType.ListOnly,
         categoryTitle = "Select a category",

@@ -5,10 +5,12 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -51,18 +53,20 @@ fun PlaceCard(
 ){
     val spacer = dimensionResource(R.dimen.place_spacer)
     val imageSize = dimensionResource(R.dimen.place_image_size)
+    val cardElevation = dimensionResource(R.dimen.card_elevation)
+
 
     Card(
         onClick = onClick,
-        modifier = modifier
+        modifier = modifier.fillMaxWidth(),
+        elevation = CardDefaults.cardElevation(cardElevation)
     ) {
         Row{
             Image(
                 painter = painterResource(id = imageId),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .size(imageSize)
+                modifier = Modifier.size(imageSize)
             )
 
             Spacer(Modifier.padding(spacer))
@@ -77,7 +81,7 @@ fun PlaceCard(
 
                 Text(
                     text = shortDescription,
-                    style = MaterialTheme.typography.bodyMedium
+                    style = MaterialTheme.typography.bodyMedium,
                 )
             }
         }

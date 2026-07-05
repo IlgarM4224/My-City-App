@@ -11,4 +11,6 @@
 
     <dimen name="place_image_size">128dp</dimen>
     <dimen name="place_spacer">4dp</dimen>
+
+    <dimen name="card_elevation">2dp</dimen>
 </resources>
