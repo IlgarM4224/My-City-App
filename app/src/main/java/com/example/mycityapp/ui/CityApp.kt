@@ -33,11 +33,6 @@ fun CityApp(
         else -> CityContentType.ListOnly
     }
 
-    BackHandler{
-        viewModel.onBackPressed()
-        navController.navigateUp()
-    }
-
     Surface{
         CityAppContent(
             contentType = contentType,
@@ -49,8 +44,9 @@ fun CityApp(
             canNavigateBack = uiState.currentScreen != CityScreen.Categories,
             categoryList = uiState.categories,
             placeList = uiState.currentCategory?.places ?: emptyList(),
-            selectCategory = { viewModel.selectCategory(it) },
-            selectPlace = { viewModel.selectPlace(it) },
+            selectIt = {
+                viewModel.select(it)
+            },
             navigateBack = {
                 viewModel.onBackPressed()
                 navController.navigateUp()

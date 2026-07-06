@@ -19,7 +19,13 @@ class CityAppViewModel: ViewModel() {
 
     val uiState: StateFlow<CityAppUiState> = _uiState.asStateFlow()
 
-    fun selectCategory(selectedCategory: Category){
+    fun select(it: Any){
+        when (it){
+            is Category -> selectCategory(it)
+            is Place -> selectPlace(it)
+        }
+    }
+    private fun selectCategory(selectedCategory: Category){
         _uiState.update { currentCategory ->
             currentCategory.copy(
                 currentCategory = selectedCategory,
@@ -28,7 +34,7 @@ class CityAppViewModel: ViewModel() {
         }
     }
 
-    fun selectPlace(selectedPlace: Place){
+    private fun selectPlace(selectedPlace: Place){
         _uiState.update { currentState ->
             currentState.copy(
                 currentPlace = selectedPlace,
@@ -51,11 +57,20 @@ class CityAppViewModel: ViewModel() {
                 _uiState.update { currentState ->
                     currentState.copy(
                         currentScreen = CityScreen.Categories,
-                        currentCategory = null
+                        currentCategory = null,
+                        currentPlace = null
                     )
                 }
             }
-            else -> { }
+            else -> {
+                _uiState.update { currentState ->
+                    currentState.copy(
+                        currentScreen = CityScreen.Categories,
+                        currentCategory = null,
+                        currentPlace = null
+                    )
+                }
+            }
         }
     }
 }
