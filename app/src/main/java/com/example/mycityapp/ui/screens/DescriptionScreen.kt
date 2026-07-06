@@ -7,7 +7,10 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material3.Icon
@@ -28,15 +31,18 @@ fun Description (
     @DrawableRes imageId: Int,
     modifier: Modifier = Modifier
 ){
+    val scrollState = rememberScrollState()
     Column(
-        modifier = modifier
+        modifier = modifier.verticalScroll(scrollState)
     ) {
         Box {
             Image(
                 painter = painterResource(id = imageId),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .heightIn(max = dimensionResource(R.dimen.image_height))
             )
         }
         Text(

@@ -1,5 +1,6 @@
 package com.example.mycityapp.ui
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
@@ -32,6 +33,11 @@ fun CityApp(
         else -> CityContentType.ListOnly
     }
 
+    BackHandler{
+        viewModel.onBackPressed()
+        navController.navigateUp()
+    }
+
     Surface{
         CityAppContent(
             contentType = contentType,
@@ -46,8 +52,8 @@ fun CityApp(
             selectCategory = { viewModel.selectCategory(it) },
             selectPlace = { viewModel.selectPlace(it) },
             navigateBack = {
-                navController.navigateUp()
                 viewModel.onBackPressed()
+                navController.navigateUp()
             },
             navController = navController,
             modifier = Modifier.fillMaxSize()

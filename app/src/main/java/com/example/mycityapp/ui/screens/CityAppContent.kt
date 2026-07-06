@@ -17,7 +17,6 @@ import com.example.mycityapp.model.CityScreen
 import com.example.mycityapp.model.Place
 import com.example.mycityapp.ui.components.CityAppBar
 import com.example.mycityapp.utils.CityContentType
-import androidx.activity.compose.BackHandler
 import androidx.compose.animation.AnimatedContentTransitionScope
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.Row
@@ -87,8 +86,6 @@ fun CityAppContent(
                         )
                     }
                 ) {
-                    BackHandler { navigateBack() }
-
                     PlacesList(
                         placesList = placeList,
                         onPlaceClick = {
@@ -114,8 +111,6 @@ fun CityAppContent(
                         )
                     }
                 ) {
-                    BackHandler { navigateBack() }
-
                     Description(
                         title = title,
                         subtitle = subtitle,
@@ -144,8 +139,6 @@ fun CityAppContent(
                 }
 
                 composable (route = CityScreen.Places.name) {
-                    BackHandler { navigateBack() }
-
                     Row{
                         CategoryList(
                             categoryList = categoryList,
@@ -172,7 +165,6 @@ fun CityAppContent(
                 }
 
                 composable (route = CityScreen.Details.name) {
-                    BackHandler { navigateBack() }
                     Row {
                         PlacesList(
                             placesList = placeList,
