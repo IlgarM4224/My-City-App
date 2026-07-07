@@ -12,7 +12,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.res.dimensionResource
+import com.example.mycityapp.R
 
 @Composable
 fun CityAppBar(
@@ -21,7 +22,10 @@ fun CityAppBar(
     navigateUp: () -> Unit,
     canNavBack: Boolean = true,
 ){
-    val iconSize = 24
+    val iconSize = dimensionResource(R.dimen.icon_size)
+    val paddingSmall = dimensionResource(R.dimen.padding_small)
+    val paddingMedium = dimensionResource(R.dimen.padding_medium)
+
     Row(
         modifier = modifier,
         verticalAlignment = Alignment.CenterVertically
@@ -29,7 +33,7 @@ fun CityAppBar(
         if (canNavBack){
             IconButton(
                 onClick = navigateUp,
-                modifier = Modifier.padding(8.dp).size(iconSize.dp)
+                modifier = Modifier.padding(paddingSmall).size(iconSize)
             ) {
                 Icon(
                     imageVector = Icons.Default.ArrowBackIosNew,
@@ -40,7 +44,7 @@ fun CityAppBar(
         Text(
             text = categoryTitle,
             style = MaterialTheme.typography.titleLarge,
-            modifier = Modifier.padding(16.dp)
+            modifier = Modifier.padding(paddingMedium)
         )
     }
 }
