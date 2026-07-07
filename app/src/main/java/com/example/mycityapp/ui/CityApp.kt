@@ -39,7 +39,7 @@ fun CityApp(
             title = stringResource(id = uiState.currentPlace?.titleId ?: R.string.default_title),
             subtitle = stringResource(id = uiState.currentPlace?.subtitleId ?: R.string.default_subtitle),
             fullDescription = stringResource(id = uiState.currentPlace?.fullDescriptionId ?: R.string.default_full_description),
-            imageId = uiState.currentPlace?.imageId ?: R.drawable.foto1_a,
+            imageId = uiState.currentPlace?.imageId ?: R.drawable.photo1_a,
             canNavigateBack = uiState.currentScreen != CityScreen.Categories,
             categoryList = uiState.categories,
             placeList = uiState.currentCategory?.places ?: emptyList(),
