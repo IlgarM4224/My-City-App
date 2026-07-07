@@ -13,4 +13,6 @@
     <dimen name="place_spacer">4dp</dimen>
 
     <dimen name="card_elevation">2dp</dimen>
+    <dimen name="icon_size">24dp</dimen>
+
 </resources>
