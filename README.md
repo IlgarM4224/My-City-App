@@ -13,7 +13,7 @@ Here is how the app adapts to different window size classes and themes:
 ### Compact Screens (Phones)
 | Light                                 |                                Dark |
 |:--------------------------------------|------------------------------------:|
-| ![Compact Light](img/CompactDark.gif) | [Compact Dark](img/CompactDark.gif) |
+| ![Compact Light](img/CompactLight.gif) | [Compact Dark](img/CompactDark.gif) |
 
 ### Change screen orientation from portrait to landscape
 ![Compact to list and details](img/CompactToListAndDetails.gif)
