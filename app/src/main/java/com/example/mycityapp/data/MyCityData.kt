@@ -48,7 +48,7 @@ object MyCityData {
             subtitleId = R.string.subtitle1_A,
             shortDescriptionId = R.string.short_description1_A,
             fullDescriptionId = R.string.full_description1_A,
-            imageId = R.drawable.foto1_a
+            imageId = R.drawable.photo1_a
         ),
         Place(
             categoryTitleId = R.string.category_Attractions,
@@ -56,7 +56,7 @@ object MyCityData {
             subtitleId = R.string.subtitle2_A,
             shortDescriptionId = R.string.short_description2_A,
             fullDescriptionId = R.string.full_description2_A,
-            imageId = R.drawable.foto2_a
+            imageId = R.drawable.photo2_a
         ),
         Place(
             categoryTitleId = R.string.category_Attractions,
@@ -64,7 +64,7 @@ object MyCityData {
             subtitleId = R.string.subtitle3_A,
             shortDescriptionId = R.string.short_description3_A,
             fullDescriptionId = R.string.full_description3_A,
-            imageId = R.drawable.foto3_a
+            imageId = R.drawable.photo3_a
         ),
         Place(
             categoryTitleId = R.string.category_Attractions,
@@ -72,7 +72,7 @@ object MyCityData {
             subtitleId = R.string.subtitle4_A,
             shortDescriptionId = R.string.short_description4_A,
             fullDescriptionId = R.string.full_description4_A,
-            imageId = R.drawable.foto4_a
+            imageId = R.drawable.photo4_a
         ),
         Place(
             categoryTitleId = R.string.category_walks_and_recreation,
@@ -80,7 +80,7 @@ object MyCityData {
             subtitleId = R.string.subtitle1_WandR,
             shortDescriptionId = R.string.short_description1_WandR,
             fullDescriptionId = R.string.full_description1_WandR,
-            imageId = R.drawable.foto1_wandr
+            imageId = R.drawable.photo1_wandr
         ),
         Place(
             categoryTitleId = R.string.category_walks_and_recreation,
@@ -88,7 +88,7 @@ object MyCityData {
             subtitleId = R.string.subtitle2_WandR,
             shortDescriptionId = R.string.short_description2_WandR,
             fullDescriptionId = R.string.full_description2_WandR,
-            imageId = R.drawable.foto2_wandr
+            imageId = R.drawable.photo2_wandr
         ),
         Place(
             categoryTitleId = R.string.category_walks_and_recreation,
@@ -96,7 +96,7 @@ object MyCityData {
             subtitleId = R.string.subtitle3_WandR,
             shortDescriptionId = R.string.short_description3_WandR,
             fullDescriptionId = R.string.full_description3_WandR,
-            imageId = R.drawable.foto3_wandr
+            imageId = R.drawable.photo3_wandr
         ),
         Place(
             categoryTitleId = R.string.category_walks_and_recreation,
@@ -104,7 +104,7 @@ object MyCityData {
             subtitleId = R.string.subtitle4_WandR,
             shortDescriptionId = R.string.short_description4_WandR,
             fullDescriptionId = R.string.full_description4_WandR,
-            imageId = R.drawable.foto4_wandr
+            imageId = R.drawable.photo4_wandr
         ),
         Place(
             categoryTitleId = R.string.category_food,
@@ -112,7 +112,7 @@ object MyCityData {
             subtitleId = R.string.subtitle1_F,
             shortDescriptionId = R.string.short_description1_F,
             fullDescriptionId = R.string.full_description1_F,
-            imageId = R.drawable.foto1_f
+            imageId = R.drawable.photo1_f
         ),
         Place(
             categoryTitleId = R.string.category_food,
@@ -120,7 +120,7 @@ object MyCityData {
             subtitleId = R.string.subtitle2_F,
             shortDescriptionId = R.string.short_description2_F,
             fullDescriptionId = R.string.full_description2_F,
-            imageId = R.drawable.foto2_f
+            imageId = R.drawable.photo2_f
         ),
         Place(
             categoryTitleId = R.string.category_food,
@@ -128,7 +128,7 @@ object MyCityData {
             subtitleId = R.string.subtitle3_F,
             shortDescriptionId = R.string.short_description3_F,
             fullDescriptionId = R.string.full_description3_F,
-            imageId = R.drawable.foto3_f
+            imageId = R.drawable.photo3_f
         ),
         Place(
             categoryTitleId = R.string.category_food,
@@ -136,7 +136,7 @@ object MyCityData {
             subtitleId = R.string.subtitle4_F,
             shortDescriptionId = R.string.short_description4_F,
             fullDescriptionId = R.string.full_description4_F,
-            imageId = R.drawable.foto4_f
+            imageId = R.drawable.photo4_f
         ),
     )
 
