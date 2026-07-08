@@ -4,6 +4,10 @@ A modern, adaptive Android application that showcases interesting places to visi
 
 The main goal of this project is to demonstrate how to build a dynamic UI that automatically adjusts to various screen sizes (Compact, Medium, Expanded) using Jetpack Compose.
 
+**Source code:**
+[Browse the app package on GitHub →](https://github.com/IlgarM4224/My-City-App/tree/main/app/src/main/java/com/example/mycityapp)
+
+---
 
 ## Visuals & Layouts
 
