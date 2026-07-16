@@ -15,18 +15,12 @@ Here is how the app adapts to different window size classes and themes:
 > **Note:** The demonstration highlights the system back button and the UI back button actions to showcase proper back-stack handling and seamless navigation.
 
 ### Compact Screens (Phones)
-Light                                 |                                Dark |
-|:--------------------------------------|------------------------------------:|
-| ![Compact Light](img/CompactLight.gif) | ![Compact Dark](img/CompactDark.gif) |
-
-### Change screen orientation from portrait to landscape
-![Compact to list and details](img/CompactToListAndDetails.gif)
-
-### Medium screen (foldable)
-![Medium](img/Medium.gif)
+| Light                                                           |                                                           Dark |
+|:----------------------------------------------------------------|---------------------------------------------------------------:|
+| <img src="img/CompactLight.gif" width="330" alt="Light screen"> |  <img src="img/CompactDark.gif" width="330" alt="Dark screen"> |
 
 ### Large screen (Tablet)
-![Large](img/Large.gif)
+<img src="img/Large.gif" alt="Tablet screen">
 
 
 ## 🛠 Tech Stack & Architecture
